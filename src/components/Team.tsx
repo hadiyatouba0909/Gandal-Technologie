@@ -1,142 +1,259 @@
-import { Github, Linkedin, Mail } from "lucide-react";
-import { Card, CardContent } from "./ui/card";
-import { Button } from "./ui/button";
+import { useState, useEffect } from 'react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 const Team = () => {
+  const [isVisible, setIsVisible] = useState<Record<string, boolean>>({});
+  const [hoveredMember, setHoveredMember] = useState<number | null>(null);
+
   const teamMembers = [
     {
-      id: 1,
-      name: "Hadiyatou BA",
-      role: "Co-fondatrice & Développeuse Full Stack Web & Mobile",
-      quote: "Mon objectif : créer des interfaces intuitives et accessibles, qui allient design et performance.",
-      specialization: "Frontend et Backend",
-      passion: "Passionnée par l'impact social de la tech et la place des femmes dans le numérique.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?auto=format&fit=crop&w=400&h=400",
-      social: {
-        github: "#",
-        linkedin: "#",
-        email: "hadiyatou@gandal-technologie.com"
-      }
+      name: 'Hadiyatou BA',
+      role: 'Co-fondatrice & Développeuse Full Stack Web & Mobile',
+      quote: 'Mon objectif : créer des interfaces intuitives et accessibles, qui allient design et performance.',
+      specialization: 'Spécialisée en Frontend et Backend',
+      passion: 'Passionnée par l\'impact social de la tech et la place des femmes dans le numérique.',
+      image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400',
+      gradient: 'from-pink-400 to-purple-500',
+      socials: {
+        github: '#',
+        linkedin: '#',
+        email: 'hadiyatou@gandal-technologie.com'
+      },
+      skills: ['React', 'Vue.js', 'Node.js', 'UI/UX'],
+      experience: '5+ années'
     },
     {
-      id: 2,
-      name: "Ibrahima Sory Diallo",
-      role: "Co-fondateur & Développeur Full Stack Web & Mobile",
-      quote: "J'aime transformer les idées en solutions concrètes qui répondent à des vrais besoins.",
-      specialization: "Backend et Frontend",
-      passion: "Passionné par l'innovation, l'optimisation et la culture open source.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&h=400",
-      social: {
-        github: "#",
-        linkedin: "#",
-        email: "ibrahima@gandal-technologie.com"
-      }
+      name: 'Ibrahima Sory Diallo',
+      role: 'Co-fondateur & Développeur Full Stack Web & Mobile',
+      quote: 'J\'aime transformer les idées en solutions concrètes qui répondent à des vrais besoins.',
+      specialization: 'Spécialisé en Backend et Frontend',
+      passion: 'Passionné par l\'innovation, l\'optimisation et la culture open source.',
+      image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=400',
+      gradient: 'from-blue-400 to-cyan-500',
+      socials: {
+        github: '#',
+        linkedin: '#',
+        email: 'ibrahima@gandal-technologie.com'
+      },
+      skills: ['Python', 'Django', 'React', 'DevOps'],
+      experience: '6+ années'
     }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsVisible(prev => ({
+            ...prev,
+            [entry.target.id]: entry.isIntersecting
+          }));
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('[id]').forEach((el) => {
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section id="equipe" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
-            Notre <span className="text-primary">Équipe</span>
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
-            Chez Gandal-Technologie, derrière chaque ligne de code, il y a des personnes passionnées, engagées et complémentaires. Découvrez qui nous sommes.
-          </p>
-        </div>
+    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Particules flottantes décoratives */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-gradient-to-r from-pink-400 to-blue-400 rounded-full opacity-20 animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${i * 0.8}s`,
+              animationDuration: `${3 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+      </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {teamMembers.map((member) => (
-            <Card key={member.id} className="border-none shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
-              <CardContent className="p-0">
-                <div className="flex flex-col md:flex-row">
-                  <div className="md:w-1/3">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-64 md:h-full object-cover"
-                    />
-                  </div>
-                  <div className="md:w-2/3 p-6">
-                    <div className="mb-4">
-                      <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
-                        {member.name}
-                      </h3>
-                      <p className="text-primary font-semibold font-body text-sm mb-3">
-                        {member.role}
-                      </p>
-                    </div>
-                    
-                    <blockquote className="border-l-4 border-primary pl-4 mb-4">
-                      <p className="text-muted-foreground font-body italic leading-relaxed">
-                        "{member.quote}"
-                      </p>
-                    </blockquote>
-                    
-                    <div className="space-y-2 mb-4">
-                      <p className="text-sm">
-                        <span className="font-semibold text-foreground">Spécialisé en :</span>{" "}
-                        <span className="text-muted-foreground">{member.specialization}</span>
-                      </p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {member.passion}
-                      </p>
-                    </div>
-                    
-                    <div className="flex gap-2">
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => window.open(member.social.linkedin, '_blank')}
-                      >
-                        <Linkedin className="h-4 w-4" />
-                      </Button>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => window.open(member.social.github, '_blank')}
-                      >
-                        <Github className="h-4 w-4" />
-                      </Button>
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        onClick={() => window.location.href = `mailto:${member.social.email}`}
-                      >
-                        <Mail className="h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-heading font-bold text-foreground mb-4">
-              Prêts à collaborer avec vous
-            </h3>
-            <p className="text-muted-foreground font-body leading-relaxed mb-6">
-              Notre complémentarité et notre passion commune font notre force. Nous sommes prêts à mettre notre expertise à votre service pour donner vie à vos projets digitaux.
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          {/* Header avec animation */}
+          <div 
+            id="team-header"
+            className={`text-center mb-16 transition-all duration-1000 transform ${
+              isVisible['team-header'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
+            <h2 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
+             <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-blue-500 bg-clip-text text-transparent"> Notre Équipe</span>
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-pink-500 to-blue-500 mx-auto mb-8 rounded-full animate-pulse"></div>
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              Chez Gandal-Technologie, derrière chaque ligne de code, il y a des personnes passionnées, engagées et complémentaires. Découvrez qui nous sommes.
             </p>
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-4"
-              onClick={() => {
-                const element = document.getElementById('contact');
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
-              Rencontrons-nous
-            </Button>
+          </div>
+
+
+
+          {/* Membres de l'équipe */}
+          <div 
+            id="team-members"
+            className={`grid md:grid-cols-2 gap-8 transition-all duration-1000 delay-500 transform ${
+              isVisible['team-members'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+            }`}
+          >
+            {teamMembers.map((member, index) => (
+              <div 
+                key={index}
+                className={`group relative bg-white/70 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-white/30 hover:bg-white/90 hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 text-center overflow-hidden ${
+                  hoveredMember === index ? 'scale-105' : ''
+                }`}
+                style={{ transitionDelay: `${index * 200}ms` }}
+                onMouseEnter={() => setHoveredMember(index)}
+                onMouseLeave={() => setHoveredMember(null)}
+              >
+                {/* Gradient de fond animé */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${member.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
+                
+                <div className="relative z-10">
+                  {/* Photo avec effets */}
+                  <div className="relative mb-6">
+                    <div className="relative w-32 h-32 mx-auto">
+                      {/* Cercle animé en arrière-plan */}
+                      <div className={`absolute inset-0 bg-gradient-to-r ${member.gradient} rounded-full animate-pulse opacity-20 group-hover:opacity-40 transition-opacity duration-500`}></div>
+                      <div className={`absolute inset-2 bg-gradient-to-r ${member.gradient} rounded-full opacity-0 group-hover:opacity-30 transition-all duration-500 group-hover:animate-ping`}></div>
+                      
+                      {/* Photo */}
+                      <div className="relative w-full h-full rounded-full overflow-hidden ring-4 ring-white shadow-xl group-hover:ring-8 transition-all duration-500">
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Badge Co-fondateur */}
+                    <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r ${member.gradient} text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      Co-fondateur{index === 0 ? 'trice' : ''}
+                    </div>
+                  </div>
+
+                  {/* Informations personnelles */}
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:bg-clip-text group-hover:from-pink-600 group-hover:to-blue-600 transition-all duration-300">
+                      {member.name}
+                    </h3>
+                    <p className="text-slate-600 font-medium mb-3 group-hover:text-slate-700 transition-colors duration-300">
+                      {member.role}
+                    </p>
+                    
+                    {/* Expérience et compétences */}
+                    <div className="flex justify-center space-x-4 mb-3">
+                      <span className="bg-white/60 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-slate-700 border border-white/30">
+                        {member.experience}
+                      </span>
+                      <span className={`bg-gradient-to-r ${member.gradient} text-white px-3 py-1 rounded-full text-sm font-medium shadow-lg`}>
+                        Full Stack
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Carte de citation avec glassmorphism */}
+                  <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-4 mb-4 text-left border border-white/30 group-hover:bg-white/70 transition-all duration-300">
+                    <p className="text-slate-700 italic mb-3 text-base leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
+                      "{member.quote}"
+                    </p>
+                    <div className="space-y-2">
+                      <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-300 text-sm">
+                        <span className="font-semibold text-slate-800">🎯 Spécialisation:</span> {member.specialization}
+                      </p>
+                      <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-300 text-sm">
+                        <span className="font-semibold text-slate-800">❤️ Passion:</span> {member.passion}
+                      </p>
+                    </div>
+                    
+                    {/* Compétences techniques */}
+                    <div className="mt-3">
+                      <p className="text-xs font-semibold text-slate-800 mb-2">🛠️ Compétences clés:</p>
+                      <div className="flex flex-wrap gap-1">
+                        {member.skills.map((skill, idx) => (
+                          <span 
+                            key={idx}
+                            className="bg-white/70 backdrop-blur-sm px-2 py-1 rounded-full text-xs font-medium text-slate-700 border border-white/30 hover:scale-105 transition-transform duration-300"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Réseaux sociaux avec animations */}
+                  <div className="flex justify-center space-x-3">
+                    <a 
+                      href={member.socials.github}
+                      className="group/social bg-slate-800 text-white p-3 rounded-full hover:bg-slate-700 hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg"
+                      title="GitHub"
+                    >
+                      <Github className="w-4 h-4 group-hover/social:animate-bounce" />
+                    </a>
+                    <a 
+                      href={member.socials.linkedin}
+                      className="group/social bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg"
+                      title="LinkedIn"
+                    >
+                      <Linkedin className="w-4 h-4 group-hover/social:animate-bounce" />
+                    </a>
+                    <a 
+                      href={`mailto:${member.socials.email}`}
+                      className={`group/social bg-gradient-to-r ${member.gradient} text-white p-3 rounded-full hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-lg`}
+                      title="Email"
+                    >
+                      <Mail className="w-4 h-4 group-hover/social:animate-bounce" />
+                    </a>
+                  </div>
+
+                  {/* Ligne décorative */}
+                  <div className={`w-0 h-1 bg-gradient-to-r ${member.gradient} mt-4 group-hover:w-full transition-all duration-500 rounded-full`}></div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Styles pour les animations personnalisées */}
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes float {
+            0%, 100% {
+              transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+              transform: translateY(-15px) rotate(5deg);
+            }
+          }
+          
+          @keyframes pulse-ring {
+            0% {
+              transform: scale(0.8);
+              opacity: 1;
+            }
+            100% {
+              transform: scale(2);
+              opacity: 0;
+            }
+          }
+          
+          .animate-pulse-ring {
+            animation: pulse-ring 2s infinite;
+          }
+        `
+      }} />
     </section>
   );
 };
