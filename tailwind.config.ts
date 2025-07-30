@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Poppins', 'Roboto', 'sans-serif'],
+				body: ['Roboto', 'sans-serif'],
+				heading: ['Poppins', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +66,17 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				gandal: {
+					navy: 'hsl(var(--gandal-navy))',
+					blue: 'hsl(var(--gandal-blue))',
+					'blue-medium': 'hsl(var(--gandal-blue-medium))',
+					'blue-light': 'hsl(var(--gandal-blue-light))',
+					cyan: 'hsl(var(--gandal-cyan))',
+					'cyan-light': 'hsl(var(--gandal-cyan-light))',
+					sky: 'hsl(var(--gandal-sky))',
+					'sky-light': 'hsl(var(--gandal-sky-light))',
+					ice: 'hsl(var(--gandal-ice))'
 				}
 			},
 			borderRadius: {
