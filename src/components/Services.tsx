@@ -29,6 +29,14 @@ const Services = () => {
       features: ['Cross-platform', 'UX optimisée', 'Performance native', 'App Store ready'],
       gradient: 'from-green-500 to-emerald-500',
       bgGradient: 'from-green-50 to-emerald-50'
+    },
+    {
+      icon: Globe,
+      title: 'Solutions e-commerce',
+      description: 'Boutiques en ligne, systèmes de paiement sécurisés, gestion des stocks — nous vous aidons à vendre efficacement sur le web.',
+      features: ['Intégration de paiement', 'Gestion des produits', 'Suivi des commandes', 'Support client intégré'],
+      gradient: 'from-yellow-500 to-orange-500',
+      bgGradient: 'from-yellow-50 to-orange-50'
     }
   ];
 
