@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> f893693 ([200~Initial commit : mise en place du projet Gandal-Technologie)
