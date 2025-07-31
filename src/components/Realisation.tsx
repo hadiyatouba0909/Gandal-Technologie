@@ -205,7 +205,7 @@ const Realisation = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+    <section id="portfolio" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
       {/* Particules flottantes décoratives */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(12)].map((_, i) => (

@@ -232,17 +232,10 @@ const Footer = () => {
               </p>
             </div>
             <div className="flex items-center space-x-6 text-sm text-slate-400">
-              <a href="#" className="hover:text-blue-300 transition-colors duration-300 hover:scale-105 transform">
-                Mentions légales
+              <a href="https://orangedigitalcenter.sn/" className="hover:text-blue-300 transition-colors duration-300 hover:scale-105 transform">
+                Orange Digital Center
               </a>
               <span className="text-slate-600">•</span>
-              <a href="#" className="hover:text-blue-300 transition-colors duration-300 hover:scale-105 transform">
-                Politique de confidentialité
-              </a>
-              <span className="text-slate-600">•</span>
-              <a href="#" className="hover:text-blue-300 transition-colors duration-300 hover:scale-105 transform">
-                CGV
-              </a>
             </div>
           </div>
         </div>

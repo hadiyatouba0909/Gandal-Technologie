@@ -29,14 +29,6 @@ const Services = () => {
       features: ['Cross-platform', 'UX optimisée', 'Performance native', 'App Store ready'],
       gradient: 'from-green-500 to-emerald-500',
       bgGradient: 'from-green-50 to-emerald-50'
-    },
-    {
-      icon: Globe,
-      title: 'Solutions e-commerce',
-      description: 'Boutiques en ligne, systèmes de paiement sécurisés, gestion des stocks — nous vous aidons à vendre efficacement sur le web.',
-      features: ['Intégration de paiement', 'Gestion des produits', 'Suivi des commandes', 'Support client intégré'],
-      gradient: 'from-yellow-500 to-orange-500',
-      bgGradient: 'from-yellow-50 to-orange-50'
     }
   ];
 
@@ -44,25 +36,25 @@ const Services = () => {
     {
       icon: Zap,
       title: 'Réactifs',
-      description: 'vos idées prennent vie rapidement',
+      description: 'Vos idées prennent vie rapidement.',
       color: 'from-yellow-400 to-orange-500'
     },
     {
       icon: Users,
       title: 'Flexibles',
-      description: 'nous nous adaptons à vos besoins et à votre budget',
+      description: 'Nous nous adaptons à vos besoins et à votre budget.',
       color: 'from-blue-400 to-purple-500'
     },
     {
       icon: Shield,
       title: 'Engagés',
-      description: 'votre satisfaction est notre priorité',
+      description: 'Votre satisfaction est notre priorité.',
       color: 'from-green-400 to-cyan-500'
     },
     {
       icon: CheckCircle,
       title: 'Locaux et connectés',
-      description: 'nous comprenons vos réalités et apportons des solutions globales',
+      description: 'Nous comprenons vos réalités et apportons des solutions globales.',
       color: 'from-pink-400 to-red-500'
     }
   ];
@@ -88,7 +80,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+    <section id="services" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
       {/* Particules flottantes décoratives */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (

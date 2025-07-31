@@ -95,7 +95,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-500 to-indigo-100 relative overflow-hidden">
+    <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 via-blue-500 to-indigo-100 relative overflow-hidden">
       {/* Particules flottantes décoratives */}
       <div className="absolute inset-0 pointer-events-none">
         {[...Array(8)].map((_, i) => (
