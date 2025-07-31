@@ -31,7 +31,7 @@ const Team = () => {
       image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=400',
       gradient: 'from-blue-400 to-cyan-500',
       socials: {
-        github: '#',
+        github: 'https://github.com/IbrahimaISIDev',
         linkedin: 'https://www.linkedin.com/in/ibrahima-sory-diallo-363069249/',
         email: 'soydiallo371@gmail.com'
       },

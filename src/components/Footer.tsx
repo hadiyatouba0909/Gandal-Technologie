@@ -12,6 +12,7 @@ const Footer = () => {
     { name: 'Nos Valeurs', href: '#values' },
     { name: 'Services', href: '#services' },
     { name: 'Réalisations', href: '#portfolio' },
+    { name: 'Équipe', href: '#team' },
     { name: 'Contact', href: '#contact' }
   ];
 
