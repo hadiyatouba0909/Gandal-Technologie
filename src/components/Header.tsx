@@ -4,23 +4,40 @@ import { Menu, X, Code2, Phone, Mail, Clock, MessageCircle } from 'lucide-react'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+
+      // Détecter la section active
+      const sections = ['home', 'about', 'values', 'services', 'portfolio', 'team', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const menuItems = [
-    { name: 'Accueil', href: '#home' },
-    { name: 'À propos', href: '#about' },
-    { name: 'Nos Valeurs', href: '#values' },
-    { name: 'Services', href: '#services' },
-    { name: 'Réalisations', href: '#portfolio'},
-    { name: 'Équipe', href: '#team' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Accueil', href: '#home', id: 'home' },
+    { name: 'À propos', href: '#about', id: 'about' },
+    { name: 'Nos Valeurs', href: '#values', id: 'values' },
+    { name: 'Services', href: '#services', id: 'services' },
+    { name: 'Réalisations', href: '#portfolio', id: 'portfolio'},
+    { name: 'Équipe', href: '#team', id: 'team' },
+    { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   return (
@@ -88,11 +105,19 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="font-semibold transition-all duration-300 relative group py-2 px-1 text-slate-700 hover:text-blue-600"
+                className={`font-semibold transition-all duration-300 relative group py-2 px-1 hover:text-blue-600 ${
+                  activeSection === item.id 
+                    ? 'text-blue-600' 
+                    : 'text-slate-700'
+                }`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {item.name}
-                <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full rounded-full`}></span>
+                <span className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 rounded-full ${
+                  activeSection === item.id 
+                    ? 'w-full' 
+                    : 'w-0 group-hover:w-full'
+                }`}></span>
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></span>
               </a>
             ))}
@@ -107,21 +132,47 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Mobile Menu - Mobile First */}
+        {/* Mobile Menu - Style amélioré et fonctionnel */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 sm:mt-6 pb-4 sm:pb-6 border-t border-slate-200 bg-white rounded-xl sm:rounded-2xl mx-2 sm:mx-4">
-            <div className="pt-4 sm:pt-6 space-y-1 sm:space-y-2">
+          <div className="md:hidden mt-4 pb-4 bg-white rounded-xl shadow-2xl border border-slate-200 mx-2">
+            <div className="py-4 space-y-1 max-h-[70vh] overflow-y-auto">
               {menuItems.map((item, index) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block py-2 sm:py-3 px-3 sm:px-4 font-semibold transition-all duration-300 rounded-lg sm:rounded-xl hover:scale-105 text-slate-700 hover:text-blue-600 hover:bg-blue-50"
+                  className={`block py-3 px-4 mx-2 font-semibold transition-all duration-300 rounded-xl border-l-4 transform ${
+                    activeSection === item.id 
+                      ? 'text-blue-600 bg-gradient-to-r from-blue-50 to-purple-50 border-blue-500 shadow-sm translate-x-1' 
+                      : 'text-slate-700 hover:text-blue-600 hover:bg-blue-50 border-transparent hover:border-blue-200'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
-                  style={{ animationDelay: `${index * 50}ms` }}
+                  style={{ 
+                    animationDelay: `${index * 50}ms`,
+                    animation: 'slideIn 0.3s ease-out forwards'
+                  }}
                 >
-                  {item.name}
+                  <div className="flex items-center justify-between">
+                    <span>{item.name}</span>
+                    {activeSection === item.id && (
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
+                    )}
+                  </div>
                 </a>
               ))}
+              
+              {/* Contact rapide en bas du menu mobile */}
+              <div className="mt-4 pt-4 border-t border-slate-200 mx-2">
+                <a 
+                  href="https://wa.me/221771234567" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 px-6 py-3 rounded-xl text-white font-semibold transition-all duration-300 hover:scale-105 shadow-lg w-full"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span className="text-sm">WhatsApp</span>
+                </a>
+              </div>
             </div>
           </div>
         )}
