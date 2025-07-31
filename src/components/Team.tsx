@@ -15,9 +15,9 @@ const Team = () => {
       image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400',
       gradient: 'from-pink-400 to-purple-500',
       socials: {
-        github: '#',
-        linkedin: '#',
-        email: 'hadiyatou@gandal-technologie.com'
+        github: 'https://github.com/hadiyatouba0909',
+        linkedin: 'https://www.linkedin.com/in/hadiyatou-ba-a5742a247/',
+        email: 'hadiyatoubab09@gmail.com'
       },
       skills: ['React', 'Vue.js', 'Node.js', 'UI/UX'],
       experience: '5+ années'
@@ -32,8 +32,8 @@ const Team = () => {
       gradient: 'from-blue-400 to-cyan-500',
       socials: {
         github: '#',
-        linkedin: '#',
-        email: 'ibrahima@gandal-technologie.com'
+        linkedin: 'https://www.linkedin.com/in/ibrahima-sory-diallo-363069249/',
+        email: 'soydiallo371@gmail.com'
       },
       skills: ['Python', 'Django', 'React', 'DevOps'],
       experience: '6+ années'
