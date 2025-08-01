@@ -12,7 +12,7 @@ const Team = () => {
       quote: 'Mon objectif : créer des interfaces intuitives et accessibles, qui allient design et performance.',
       specialization: 'Spécialisée en Frontend et Backend',
       passion: 'Passionnée par l\'impact social de la tech et la place des femmes dans le numérique.',
-      image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: '/WhatsApp Image 2025-03-03 at 08.51.12.jpeg',
       gradient: 'from-pink-400 to-purple-500',
       gender: 'female', // Ajout d'un indicateur de genre
       socials: {
@@ -20,8 +20,8 @@ const Team = () => {
         linkedin: 'https://www.linkedin.com/in/hadiyatou-ba-a5742a247/',
         email: 'hadiyatoubab09@gmail.com'
       },
-      skills: ['React', 'Vue.js', 'Node.js', 'UI/UX'],
-      experience: '5+ années'
+      skills: ['React', 'Node.js', 'Angular', 'Laravel', 'Spring Boot', 'Flutter', 'Tailwind CSS', 'Swagger', 'Figma', 'Git', 'Agile', 'Scrum', 'CI/CD', 'Docker', 'Kubernetes', 'GraphQL', 'RESTful APIs', 'PostgreSQL', 'MongoDB', 'MySQL', 'Firebase', 'Cloudinary', 'AWS', 'Azure', 'DevOps'],
+      experience: '2+ années'
     },
     {
       name: 'Ibrahima Sory Diallo',
@@ -37,8 +37,8 @@ const Team = () => {
         linkedin: 'https://www.linkedin.com/in/ibrahima-sory-diallo-363069249/',
         email: 'soydiallo371@gmail.com'
       },
-      skills: ['Python', 'Django', 'React', 'DevOps'],
-      experience: '6+ années'
+      skills: ['React', 'Node.js', 'Angular', 'Laravel', 'Spring Boot', 'Flutter', 'Tailwind CSS', 'Swagger', 'Figma', 'Git', 'Agile', 'Scrum', 'CI/CD', 'Docker', 'Kubernetes', 'GraphQL', 'RESTful APIs', 'PostgreSQL', 'MongoDB', 'MySQL', 'Firebase', 'Cloudinary', 'AWS', 'Azure', 'DevOps'],
+      experience: '2+ années'
     }
   ];
 
