@@ -14,6 +14,7 @@ const Team = () => {
       passion: 'Passionnée par l\'impact social de la tech et la place des femmes dans le numérique.',
       image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400',
       gradient: 'from-pink-400 to-purple-500',
+      gender: 'female', // Ajout d'un indicateur de genre
       socials: {
         github: 'https://github.com/hadiyatouba0909',
         linkedin: 'https://www.linkedin.com/in/hadiyatou-ba-a5742a247/',
@@ -30,6 +31,7 @@ const Team = () => {
       passion: 'Passionné par l\'innovation, l\'optimisation et la culture open source.',
       image: 'https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=400',
       gradient: 'from-blue-400 to-cyan-500',
+      gender: 'male', // Ajout d'un indicateur de genre
       socials: {
         github: 'https://github.com/IbrahimaISIDev',
         linkedin: 'https://www.linkedin.com/in/ibrahima-sory-diallo-363069249/',
@@ -96,8 +98,6 @@ const Team = () => {
             </p>
           </div>
 
-
-
           {/* Membres de l'équipe */}
           <div 
             id="team-members"
@@ -136,9 +136,9 @@ const Team = () => {
                       </div>
                     </div>
                     
-                    {/* Badge Co-fondateur */}
+                    {/* Badge Co-fondateur/Co-fondatrice CORRIGÉ */}
                     <div className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r ${member.gradient} text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      Co-fondateur{index === 0 ? 'trice' : ''}
+                      {member.gender === 'female' ? 'Co-fondatrice' : 'Co-fondateur'}
                     </div>
                   </div>
 
