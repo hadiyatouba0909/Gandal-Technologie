@@ -95,13 +95,13 @@ const Contact = () => {
   }, []);
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-50 via-blue-500 to-indigo-100 relative overflow-hidden">
-      {/* Particules flottantes décoratives */}
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Particules flottantes décoratives - Responsive */}
       <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(window.innerWidth < 768 ? 4 : 8)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 animate-pulse"
+            className="absolute w-1 h-1 sm:w-2 sm:h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -112,64 +112,64 @@ const Contact = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
-          {/* Header avec animation */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          {/* Header avec animation - Mobile First */}
           <div 
             id="contact-header"
-            className={`text-center mb-16 transition-all duration-1000 transform ${
+            className={`text-center mb-8 sm:mb-12 lg:mb-16 transition-all duration-1000 transform ${
               isVisible['contact-header'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-4 sm:mb-6">
               <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">Contact</span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8 rounded-full animate-pulse"></div>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+            <div className="w-20 sm:w-24 lg:w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-4 sm:mb-6 lg:mb-8 rounded-full animate-pulse"></div>
+            <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed px-4">
               Une idée ? Un projet ? Une question ? Nous sommes à votre écoute et prêts à vous accompagner dans vos ambitions digitales.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Information */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12">
+            {/* Contact Information - Mobile First */}
             <div 
               id="contact-info"
-              className={`space-y-8 transition-all duration-1000 delay-300 transform ${
+              className={`space-y-6 sm:space-y-8 transition-all duration-1000 delay-300 transform ${
                 isVisible['contact-info'] ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'
               }`}
             >
               {/* Informations de contact */}
-              <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/30 hover:bg-white/90 hover:shadow-2xl transition-all duration-500">
-                <div className="flex items-center space-x-3 mb-8">
-                  <div className="bg-gradient-to-r from-blue-500 to-purple-500 w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg">
-                    <MessageCircle className="w-6 h-6 text-white" />
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border border-white/30 hover:bg-white/90 hover:shadow-2xl transition-all duration-500">
+                <div className="flex items-center space-x-3 mb-6 sm:mb-8">
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-500 w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
+                    <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-800">Informations de contact</h3>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800">Informations de contact</h3>
                 </div>
                 
-                <div className="space-y-6">
+                <div className="space-y-4 sm:space-y-6">
                   {contactInfo.map((info, index) => (
                     <div 
                       key={index}
-                      className="group flex items-center space-x-4 p-4 rounded-2xl hover:bg-white/60 transition-all duration-300"
+                      className="group flex items-start sm:items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl hover:bg-white/60 transition-all duration-300"
                       style={{ animationDelay: info.delay }}
                     >
-                      <div className={`bg-gradient-to-r ${info.gradient} p-4 rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                        <info.icon className="w-6 h-6 text-white" />
+                      <div className={`bg-gradient-to-r ${info.gradient} p-2.5 sm:p-3 lg:p-4 rounded-xl sm:rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 flex-shrink-0`}>
+                        <info.icon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
                       </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors duration-300">
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors duration-300 text-sm sm:text-base">
                           {info.title}
                         </h4>
                         {info.link ? (
                           <a 
                             href={info.link} 
-                            className="text-slate-600 hover:text-blue-600 transition-colors duration-300 group-hover:translate-x-1 block transform"
+                            className="text-slate-600 hover:text-blue-600 transition-colors duration-300 group-hover:translate-x-1 block transform text-sm sm:text-base break-words"
                           >
                             {info.content}
                           </a>
                         ) : (
-                          <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
+                          <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-300 text-sm sm:text-base">
                             {info.content}
                           </p>
                         )}
@@ -179,58 +179,58 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Réseaux sociaux */}
-              <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/30 hover:bg-white/90 hover:shadow-2xl transition-all duration-500">
-                <div className="flex items-center space-x-3 mb-8">
-                  <div className="bg-gradient-to-r from-pink-500 to-red-500 w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg">
-                    <Instagram className="w-6 h-6 text-white" />
+              {/* Réseaux sociaux - Mobile First */}
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border border-white/30 hover:bg-white/90 hover:shadow-2xl transition-all duration-500">
+                <div className="flex items-center space-x-3 mb-6 sm:mb-8">
+                  <div className="bg-gradient-to-r from-pink-500 to-red-500 w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
+                    <Instagram className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-800">Suivez-nous</h3>
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800">Suivez-nous</h3>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                   {socialLinks.map((social, index) => (
                     <a
                       key={index}
                       href={social.url}
-                      className={`group flex items-center space-x-3 p-4 rounded-2xl bg-white/60 backdrop-blur-sm hover:bg-gradient-to-r ${social.gradient} hover:text-white hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg border border-white/30`}
+                      className={`group flex items-center space-x-2 sm:space-x-3 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/60 backdrop-blur-sm hover:bg-gradient-to-r ${social.gradient} hover:text-white hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg border border-white/30`}
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
-                      <social.icon className="w-5 h-5 group-hover:animate-bounce" />
-                      <span className="font-medium">{social.name}</span>
+                      <social.icon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce flex-shrink-0" />
+                      <span className="font-medium text-sm sm:text-base">{social.name}</span>
                     </a>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* Formulaire de contact */}
+            {/* Formulaire de contact - Mobile First */}
             <div 
               id="contact-form"
               className={`transition-all duration-1000 delay-500 transform ${
                 isVisible['contact-form'] ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'
               }`}
             >
-              <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-white/30 hover:bg-white/90 hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
+              <div className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg border border-white/30 hover:bg-white/90 hover:shadow-2xl transition-all duration-500 relative overflow-hidden">
                 {/* Gradient de fond animé */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-purple-600/5 to-cyan-600/5"></div>
                 
                 <div className="relative z-10">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <div className="bg-gradient-to-r from-green-500 to-emerald-500 w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg">
-                      <Send className="w-6 h-6 text-white" />
+                  <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+                    <div className="bg-gradient-to-r from-green-500 to-emerald-500 w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
+                      <Send className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-800">Envoyez-nous un message</h3>
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-slate-800">Envoyez-nous un message</h3>
                   </div>
                   
-                  <p className="text-slate-600 mb-8 leading-relaxed">
+                  <p className="text-slate-600 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
                     Vous avez un besoin spécifique ou simplement envie d'échanger avec nous ? 
                     Envoyez-nous un message et nous vous répondrons rapidement.
                   </p>
                   
-                  <div className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4 sm:space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                       <div className="group">
-                        <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        <label className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2">
                           Nom complet *
                         </label>
                         <div className="relative">
@@ -241,7 +241,7 @@ const Contact = () => {
                             onChange={handleChange}
                             onFocus={() => setFocusedField('name')}
                             onBlur={() => setFocusedField(null)}
-                            className={`w-full px-4 py-3 bg-white/60 backdrop-blur-sm border-2 rounded-2xl transition-all duration-300 ${
+                            className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/60 backdrop-blur-sm border-2 rounded-xl sm:rounded-2xl transition-all duration-300 text-sm sm:text-base ${
                               focusedField === 'name'
                                 ? 'border-blue-500 shadow-lg scale-105'
                                 : 'border-white/30 hover:border-blue-300'
@@ -252,7 +252,7 @@ const Contact = () => {
                       </div>
 
                       <div className="group">
-                        <label className="block text-sm font-semibold text-slate-700 mb-2">
+                        <label className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2">
                           Email *
                         </label>
                         <div className="relative">
@@ -263,7 +263,7 @@ const Contact = () => {
                             onChange={handleChange}
                             onFocus={() => setFocusedField('email')}
                             onBlur={() => setFocusedField(null)}
-                            className={`w-full px-4 py-3 bg-white/60 backdrop-blur-sm border-2 rounded-2xl transition-all duration-300 ${
+                            className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/60 backdrop-blur-sm border-2 rounded-xl sm:rounded-2xl transition-all duration-300 text-sm sm:text-base ${
                               focusedField === 'email'
                                 ? 'border-blue-500 shadow-lg scale-105'
                                 : 'border-white/30 hover:border-blue-300'
@@ -275,7 +275,7 @@ const Contact = () => {
                     </div>
 
                     <div className="group">
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                      <label className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2">
                         Sujet *
                       </label>
                       <div className="relative">
@@ -286,7 +286,7 @@ const Contact = () => {
                           onChange={handleChange}
                           onFocus={() => setFocusedField('subject')}
                           onBlur={() => setFocusedField(null)}
-                          className={`w-full px-4 py-3 bg-white/60 backdrop-blur-sm border-2 rounded-2xl transition-all duration-300 ${
+                          className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/60 backdrop-blur-sm border-2 rounded-xl sm:rounded-2xl transition-all duration-300 text-sm sm:text-base ${
                             focusedField === 'subject'
                               ? 'border-blue-500 shadow-lg scale-105'
                               : 'border-white/30 hover:border-blue-300'
@@ -297,7 +297,7 @@ const Contact = () => {
                     </div>
 
                     <div className="group">
-                      <label className="block text-sm font-semibold text-slate-700 mb-2">
+                      <label className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2">
                         Message *
                       </label>
                       <div className="relative">
@@ -307,8 +307,8 @@ const Contact = () => {
                           onChange={handleChange}
                           onFocus={() => setFocusedField('message')}
                           onBlur={() => setFocusedField(null)}
-                          rows={6}
-                          className={`w-full px-4 py-3 bg-white/60 backdrop-blur-sm border-2 rounded-2xl transition-all duration-300 resize-none ${
+                          rows={5}
+                          className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 bg-white/60 backdrop-blur-sm border-2 rounded-xl sm:rounded-2xl transition-all duration-300 resize-none text-sm sm:text-base ${
                             focusedField === 'message'
                               ? 'border-blue-500 shadow-lg scale-105'
                               : 'border-white/30 hover:border-blue-300'
@@ -321,7 +321,7 @@ const Contact = () => {
                     <button
                       onClick={handleSubmit}
                       disabled={isSubmitting || isSubmitted}
-                      className={`w-full py-4 px-6 rounded-2xl font-semibold flex items-center justify-center space-x-3 transition-all duration-300 shadow-lg ${
+                      className={`w-full py-3 sm:py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl font-semibold flex items-center justify-center space-x-2 sm:space-x-3 transition-all duration-300 shadow-lg text-sm sm:text-base ${
                         isSubmitted
                           ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white'
                           : isSubmitting
@@ -331,17 +331,17 @@ const Contact = () => {
                     >
                       {isSubmitted ? (
                         <>
-                          <CheckCircle className="w-5 h-5" />
+                          <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                           <span>Message envoyé !</span>
                         </>
                       ) : isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                           <span>Envoi en cours...</span>
                         </>
                       ) : (
                         <>
-                          <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                          <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                           <span>Envoyer le message</span>
                         </>
                       )}
@@ -352,33 +352,33 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Section call-to-action supplémentaire */}
+          {/* Section call-to-action supplémentaire - Mobile First */}
           <div 
             id="contact-cta"
-            className={`mt-16 text-center transition-all duration-1000 delay-700 transform ${
+            className={`mt-8 sm:mt-12 lg:mt-16 text-center transition-all duration-1000 delay-700 transform ${
               isVisible['contact-cta'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
             }`}
           >
-            <div className="bg-white/40 backdrop-blur-lg rounded-3xl p-8 shadow-xl border border-white/20 max-w-4xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">
+            <div className="bg-white/40 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl border border-white/20 max-w-4xl mx-auto">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 mb-3 sm:mb-4">
                 Prêt à transformer votre <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">vision</span> en réalité ?
               </h3>
-              <p className="text-slate-600 mb-6">
+              <p className="text-slate-600 mb-4 sm:mb-6 text-sm sm:text-base px-2">
                 Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nous pouvons vous aider à atteindre vos objectifs digitaux.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
                 <a 
                   href="tel:+221771234567" 
-                  className="group bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl hover:scale-105"
+                  className="group bg-green-500 hover:bg-green-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl hover:scale-105 text-sm sm:text-base"
                 >
-                  <Phone className="w-5 h-5 group-hover:animate-bounce" />
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce" />
                   <span>Appeler maintenant</span>
                 </a>
                 <a 
                   href="mailto:gandal.technologie@gmail.com" 
-                  className="group bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl hover:scale-105"
+                  className="group bg-blue-500 hover:bg-blue-600 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-full font-semibold transition-all duration-300 inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl hover:scale-105 text-sm sm:text-base"
                 >
-                  <Mail className="w-5 h-5 group-hover:animate-bounce" />
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce" />
                   <span>Envoyer un email</span>
                 </a>
               </div>
