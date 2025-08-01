@@ -60,22 +60,24 @@ const Hero = () => {
           {/* Image - Mobile First */}
           <div className="flex justify-center order-1 lg:order-2 lg:justify-end">
             <div className="relative group">
-              {/* Container de l'image avec effets */}
-              <div className="relative overflow-hidden rounded-full transition-all duration-500">
-                <img 
-                  src="/WhatsApp Image 2025-05-22 at 21.55.00.jpeg"
-                  alt="Équipe Gandal-Technologie au travail"
-                  className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px] xl:w-[600px] xl:h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                
-                {/* Overlay avec effet hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-
-              {/* Éléments décoratifs flottants - Mobile First */}
-              <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-30 animate-bounce"></div>
-              <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-30 animate-bounce" style={{animationDelay: '1s'}}></div>
-              <div className="absolute top-1/2 -right-4 sm:-right-6 lg:-right-8 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-30 animate-bounce" style={{animationDelay: '2s'}}></div>
+              {/* Éléments décoratifs flottants - 6 CERCLES ÉNORMES ET ULTRA SÉPARÉS */}
+              {/* Cercle 1 - Coin supérieur droit */}
+              <div className="absolute -top-8 -right-8 sm:-top-16 sm:-right-16 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-30 animate-bounce"></div>
+              
+              {/* Cercle 2 - Coin inférieur gauche (ultra éloigné) */}
+              <div className="absolute -bottom-12 -left-12 sm:-bottom-20 sm:-left-20 w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-30 animate-bounce" style={{animationDelay: '1s'}}></div>
+              
+              {/* Cercle 3 - Milieu droit (ultra éloigné) */}
+              <div className="absolute top-1/2 -right-32 sm:-right-48 lg:-right-64 xl:-right-80 w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-30 animate-bounce" style={{animationDelay: '2s'}}></div>
+              
+              {/* Cercle 4 - Coin supérieur gauche (ultra éloigné) */}
+              <div className="absolute -top-24 -left-32 sm:-top-40 sm:-left-48 lg:-top-48 lg:-left-64 xl:-left-80 w-34 h-34 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-60 lg:h-60 xl:w-68 xl:h-68 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full opacity-25 animate-bounce" style={{animationDelay: '3s'}}></div>
+              
+              {/* Cercle 5 - Bas milieu gauche (ultra éloigné) */}
+              <div className="absolute bottom-32 -left-48 sm:bottom-28 sm:-left-64 lg:bottom-24 lg:-left-80 xl:-left-96 w-30 h-30 sm:w-36 sm:h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 xl:w-60 xl:h-60 bg-gradient-to-r from-rose-400 to-orange-400 rounded-full opacity-25 animate-bounce" style={{animationDelay: '4s'}}></div>
+              
+              {/* Cercle 6 - Haut milieu gauche (ultra éloigné) */}
+              <div className="absolute top-20 -left-40 sm:top-16 sm:-left-56 lg:top-12 lg:-left-72 xl:-left-88 w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 bg-gradient-to-r from-indigo-400 to-violet-400 rounded-full opacity-25 animate-bounce" style={{animationDelay: '5s'}}></div>
             </div>
           </div>
         </div>

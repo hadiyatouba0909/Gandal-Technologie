@@ -34,10 +34,10 @@ const Header = () => {
     { name: 'Accueil', href: '#home', id: 'home' },
     { name: 'À propos', href: '#about', id: 'about' },
     { name: 'Nos Valeurs', href: '#values', id: 'values' },
-    { name: 'Services', href: '#services', id: 'services' },
-    { name: 'Réalisations', href: '#portfolio', id: 'portfolio'},
-    { name: 'Équipe', href: '#team', id: 'team' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
+    { name: 'Nos Services', href: '#services', id: 'services' },
+    { name: 'Nos Réalisations', href: '#portfolio', id: 'portfolio'},
+    { name: 'Notre Équipe', href: '#team', id: 'team' },
+    { name: 'Nous Contacter', href: '#contact', id: 'contact' },
   ];
 
   return (
