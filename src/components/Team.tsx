@@ -18,18 +18,6 @@ const teamMembers = [
       linkedin: 'https://www.linkedin.com/in/hadiyatou-ba-a5742a247/',
       email: 'hadiyatoubab09@gmail.com',
     },
-    skills: [
-      'React',
-      'Node.js',
-      'Angular',
-      'Laravel',
-      'Flutter',
-      'Spring Boot',
-      'Docker',
-      'PostgreSQL',
-      'MongoDB',
-      'Figma',
-    ],
   },
   {
     name: 'Ibrahima Sory Diallo',
@@ -47,18 +35,6 @@ const teamMembers = [
       linkedin: 'https://www.linkedin.com/in/ibrahima-sory-diallo-363069249/',
       email: 'soydiallo371@gmail.com',
     },
-    skills: [
-      'React',
-      'Node.js',
-      'Angular',
-      'Laravel',
-      'Flutter',
-      'Spring Boot',
-      'Docker',
-      'PostgreSQL',
-      'MongoDB',
-      'Figma',
-    ],
   },
 ];
 
@@ -145,21 +121,6 @@ const Team = () => {
                     </p>
                   </div>
                 </div>
-
-                {/* Skills */}
-                <div className="mb-5">
-                  <div className="flex flex-wrap gap-1.5 justify-center">
-                    {member.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="bg-white border border-slate-200 px-2.5 py-1 rounded-full text-xs font-medium text-slate-600"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
                 {/* Social */}
                 <div className="flex justify-center gap-3">
                   <a
