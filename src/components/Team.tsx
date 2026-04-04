@@ -4,12 +4,12 @@ import { useInView } from '../hooks/useInView';
 const teamMembers = [
   {
     name: 'Hadiyatou BA',
-    role: 'Co-fondatrice & Développeuse Full Stack',
+    role: 'Co-fondatrice & Lead Dev',
     quote:
-      'Mon objectif : créer des interfaces intuitives et accessibles, qui allient design et performance.',
-    specialization: 'Spécialisée en Frontend et Backend',
+      'Concevoir des expériences digitales intuitives, performantes et accessibles — au service d\'un numérique plus inclusif.',
+    specialization: 'Experte Full Stack — Frontend & Backend',
     passion:
-      "Passionnée par l'impact social de la tech et la place des femmes dans le numérique.",
+      'Engagée pour l\'impact social de la tech et la représentation des femmes dans le numérique.',
     image: '/WhatsApp Image 2025-03-03 at 08.51.12.jpeg',
     gradient: 'from-pink-500 to-purple-500',
     badge: 'Co-fondatrice',
@@ -21,12 +21,12 @@ const teamMembers = [
   },
   {
     name: 'Ibrahima Sory Diallo',
-    role: 'Co-fondateur & Développeur Full Stack',
+    role: 'Co-fondateur & Lead Dev',
     quote:
-      "J'aime transformer les idées en solutions concrètes qui répondent à des vrais besoins.",
-    specialization: 'Spécialisé en Backend et Frontend',
+      'Transformer des idées complexes en solutions techniques robustes, scalables et orientées utilisateur.',
+    specialization: 'Expert Full Stack — Backend & Frontend',
     passion:
-      "Passionné par l'innovation, l'optimisation et la culture open source.",
+      'Passionné par l\'innovation, l\'optimisation des systèmes et l\'écosystème open source.',
     image: '/WhatsApp Image 2025-05-22 at 21.55.00.jpeg',
     gradient: 'from-primary-500 to-primary-400',
     badge: 'Co-fondateur',
@@ -49,9 +49,8 @@ const Team = () => {
           {/* Header */}
           <div
             ref={header.ref}
-            className={`text-center mb-12 lg:mb-16 reveal ${
-              header.isVisible ? 'reveal-visible' : 'reveal-hidden'
-            }`}
+            className={`text-center mb-12 lg:mb-16 reveal ${header.isVisible ? 'reveal-visible' : 'reveal-hidden'
+              }`}
           >
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
               <span className="bg-gradient-to-r from-primary-700 to-primary-500 bg-clip-text text-transparent">
@@ -68,9 +67,8 @@ const Team = () => {
           {/* Members */}
           <div
             ref={cards.ref}
-            className={`grid md:grid-cols-2 gap-6 sm:gap-8 reveal ${
-              cards.isVisible ? 'reveal-visible' : 'reveal-hidden'
-            }`}
+            className={`grid md:grid-cols-2 gap-6 sm:gap-8 reveal ${cards.isVisible ? 'reveal-visible' : 'reveal-hidden'
+              }`}
           >
             {teamMembers.map((member, i) => (
               <div
