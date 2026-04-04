@@ -79,7 +79,7 @@ Pour connecter le projet :
 ## Contact
 
 - **Email** : gandal.technologie@gmail.com
-- **WhatsApp** : +221 77 123 45 67
+- **WhatsApp** : +221 78 016 04 74
 - **Localisation** : Dakar, Sénégal
 
 ## Auteurs
