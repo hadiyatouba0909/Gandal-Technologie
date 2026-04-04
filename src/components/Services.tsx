@@ -1,271 +1,176 @@
-import { useState, useEffect } from 'react';
-import { Globe, Monitor, Smartphone, ArrowRight, CheckCircle, Zap, Shield, Users } from 'lucide-react';
+import {
+  Globe,
+  Monitor,
+  Smartphone,
+  ArrowRight,
+  Zap,
+  Shield,
+  Users,
+  CheckCircle,
+} from 'lucide-react';
+import { useInView } from '../hooks/useInView';
+
+const services = [
+  {
+    icon: Globe,
+    title: 'Sites web sur mesure',
+    description:
+      'Sites vitrines, blogs professionnels, portfolios — nous créons des interfaces élégantes, responsives et optimisées pour le web.',
+    features: ['Design responsive', 'Optimisation SEO', 'Performance élevée', 'Interface intuitive'],
+    gradient: 'from-primary-500 to-primary-400',
+  },
+  {
+    icon: Monitor,
+    title: "Applications web",
+    description:
+      "Applications de gestion, plateformes collaboratives, tableaux de bord — des solutions puissantes et sécurisées.",
+    features: ['Solutions sur mesure', 'Sécurité renforcée', 'Scalabilité', 'Intégrations API'],
+    gradient: 'from-purple-500 to-pink-500',
+  },
+  {
+    icon: Smartphone,
+    title: 'Applications mobiles',
+    description:
+      "Pour Android et iOS, nous créons des apps fluides et intuitives, pensées pour l'expérience utilisateur.",
+    features: ['Cross-platform', 'UX optimisée', 'Performance native', 'App Store ready'],
+    gradient: 'from-green-500 to-emerald-500',
+  },
+];
+
+const advantages = [
+  {
+    icon: Zap,
+    title: 'Réactifs',
+    description: 'Vos idées prennent vie rapidement.',
+  },
+  {
+    icon: Users,
+    title: 'Flexibles',
+    description: 'Nous nous adaptons à vos besoins et à votre budget.',
+  },
+  {
+    icon: Shield,
+    title: 'Engagés',
+    description: 'Votre satisfaction est notre priorité.',
+  },
+  {
+    icon: CheckCircle,
+    title: 'Locaux et connectés',
+    description: 'Nous comprenons vos réalités et apportons des solutions globales.',
+  },
+];
 
 const Services = () => {
-  const [isVisible, setIsVisible] = useState<Record<string, boolean>>({});
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
-
-  const services = [
-    {
-      icon: Globe,
-      title: 'Création de sites web sur mesure',
-      description: 'Sites vitrines, blogs professionnels, portfolios — nous créons des interfaces élégantes, responsives et optimisées pour le web.',
-      features: ['Design responsive', 'Optimisation SEO', 'Performance élevée', 'Interface intuitive'],
-      gradient: 'from-blue-500 to-cyan-500',
-      bgGradient: 'from-blue-50 to-cyan-50'
-    },
-    {
-      icon: Monitor,
-      title: 'Développement d\'applications web',
-      description: 'Applications de gestion, plateformes collaboratives, tableaux de bord — nous développons des solutions puissantes et sécurisées côté web.',
-      features: ['Solutions sur mesure', 'Sécurité renforcée', 'Scalabilité', 'Intégrations API'],
-      gradient: 'from-purple-500 to-pink-500',
-      bgGradient: 'from-purple-50 to-pink-50'
-    },
-    {
-      icon: Smartphone,
-      title: 'Développement d\'applications mobiles',
-      description: 'Pour Android et iOS, nous créons des apps fluides et intuitives, pensées pour l\'expérience utilisateur.',
-      features: ['Cross-platform', 'UX optimisée', 'Performance native', 'App Store ready'],
-      gradient: 'from-green-500 to-emerald-500',
-      bgGradient: 'from-green-50 to-emerald-50'
-    }
-  ];
-
-  const advantages = [
-    {
-      icon: Zap,
-      title: 'Réactifs',
-      description: 'Vos idées prennent vie rapidement.',
-      color: 'from-yellow-400 to-orange-500'
-    },
-    {
-      icon: Users,
-      title: 'Flexibles',
-      description: 'Nous nous adaptons à vos besoins et à votre budget.',
-      color: 'from-blue-400 to-purple-500'
-    },
-    {
-      icon: Shield,
-      title: 'Engagés',
-      description: 'Votre satisfaction est notre priorité.',
-      color: 'from-green-400 to-cyan-500'
-    },
-    {
-      icon: CheckCircle,
-      title: 'Locaux et connectés',
-      description: 'Nous comprenons vos réalités et apportons des solutions globales.',
-      color: 'from-pink-400 to-red-500'
-    }
-  ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setIsVisible(prev => ({
-            ...prev,
-            [entry.target.id]: entry.isIntersecting
-          }));
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('[id]').forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  const header = useInView();
+  const grid = useInView(0.05);
+  const why = useInView();
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-      {/* Particules flottantes décoratives */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-20 animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${i * 0.7}s`,
-              animationDuration: `${4 + Math.random() * 2}s`
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="container mx-auto px-4 relative z-10">
+    <section id="services" className="py-16 sm:py-20 lg:py-28 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          {/* Header avec animation */}
-          <div 
-            id="services-header"
-            className={`text-center mb-20 transition-all duration-1000 transform ${
-              isVisible['services-header'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          {/* Header */}
+          <div
+            ref={header.ref}
+            className={`text-center mb-12 lg:mb-16 reveal ${
+              header.isVisible ? 'reveal-visible' : 'reveal-hidden'
             }`}
           >
-            <h2 className="text-5xl md:text-6xl font-bold text-slate-800 mb-6">
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">  Nos Services</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
+              <span className="bg-gradient-to-r from-primary-700 to-primary-500 bg-clip-text text-transparent">
+                Nos Services
+              </span>
             </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8 rounded-full animate-pulse"></div>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Chez Gandal-Technologie, nous vous accompagnons dans la conception et le développement de solutions digitales modernes, performantes et adaptées à vos besoins.
+            <div className="w-20 h-1 bg-gradient-to-r from-primary-600 to-primary-400 mx-auto mb-6 rounded-full" />
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Nous vous accompagnons dans la conception et le développement de solutions
+              digitales modernes, performantes et adaptées à vos besoins.
             </p>
           </div>
 
-          {/* Grille des services avec animations staggered */}
-          <div 
-            id="services-grid"
-            className={`grid lg:grid-cols-3 gap-8 mb-20 transition-all duration-1000 transform ${
-              isVisible['services-grid'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          {/* Service cards */}
+          <div
+            ref={grid.ref}
+            className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 lg:mb-20 reveal ${
+              grid.isVisible ? 'reveal-visible' : 'reveal-hidden'
             }`}
           >
-            {services.map((service, index) => (
-              <div 
-                key={index}
-                className={`group relative bg-white/70 backdrop-blur-sm rounded-3xl p-6 shadow-lg border border-white/30 hover:bg-white/90 hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 overflow-hidden ${
-                  hoveredService === index ? 'scale-105' : ''
-                }`}
-                style={{ 
-                  transitionDelay: `${index * 200}ms`
-                }}
-                onMouseEnter={() => setHoveredService(index)}
-                onMouseLeave={() => setHoveredService(null)}
+            {services.map((service, i) => (
+              <div
+                key={i}
+                className="group bg-slate-50 hover:bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                style={{ transitionDelay: `${i * 100}ms` }}
               >
-                {/* Gradient de fond animé */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.bgGradient} opacity-0 group-hover:opacity-50 transition-opacity duration-500`}></div>
-                
-                {/* Contenu */}
-                <div className="relative z-10">
-                  {/* Icône avec animation 3D */}
-                  <div className={`bg-gradient-to-r ${service.gradient} w-16 h-16 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg relative overflow-hidden`}>
-                    <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <service.icon className="w-8 h-8 text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  
-                  {/* Titre avec effet de couleur */}
-                  <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-slate-600 mb-4 leading-relaxed group-hover:text-slate-700 transition-colors duration-300 text-sm">
-                    {service.description}
-                  </p>
-                  
-                  {/* Liste des fonctionnalités avec animations */}
-                  <ul className="space-y-2 mb-4">
-                    {service.features.map((feature, idx) => (
-                      <li 
-                        key={idx} 
-                        className="flex items-center space-x-3 text-slate-700 group-hover:text-slate-800 transition-colors duration-300 text-sm"
-                        style={{ animationDelay: `${idx * 100}ms` }}
-                      >
-                        <div className={`w-2 h-2 bg-gradient-to-r ${service.gradient} rounded-full group-hover:scale-125 transition-transform duration-300 shadow-sm`}></div>
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Ligne décorative */}
-                  <div className={`w-0 h-1 bg-gradient-to-r ${service.gradient} group-hover:w-full transition-all duration-500 rounded-full`}></div>
+                <div
+                  className={`bg-gradient-to-r ${service.gradient} w-12 h-12 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300`}
+                >
+                  <service.icon className="w-6 h-6 text-white" />
                 </div>
+                <h3 className="text-xl font-bold text-slate-800 mb-3">{service.title}</h3>
+                <p className="text-slate-600 mb-5 leading-relaxed text-sm sm:text-base">
+                  {service.description}
+                </p>
+                <ul className="space-y-2">
+                  {service.features.map((feature, j) => (
+                    <li key={j} className="flex items-center gap-2 text-sm text-slate-600">
+                      <div
+                        className={`w-1.5 h-1.5 bg-gradient-to-r ${service.gradient} rounded-full flex-shrink-0`}
+                      />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
 
-          {/* Section avantages avec glassmorphism */}
-          <div 
-            id="advantages-section"
-            className={`transition-all duration-1000 transform ${
-              isVisible['advantages-section'] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`}
+          {/* Why choose us */}
+          <div
+            ref={why.ref}
+            className={`reveal ${why.isVisible ? 'reveal-visible' : 'reveal-hidden'}`}
           >
-            <div className="bg-white/30 backdrop-blur-lg rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20 relative overflow-hidden">
-              {/* Effet de gradient animé en arrière-plan */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-purple-600/10 to-cyan-600/10"></div>
-              
-              <div className="relative z-10">
-                <div className="text-center mb-12">
-                  <h3 className="text-4xl font-bold text-slate-800 mb-6">
-                    Pourquoi choisir <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Gandal-Technologie</span> ?
-                  </h3>
-                  <p className="text-2xl text-slate-600 mb-8">Parce que nous sommes :</p>
-                </div>
-                
-                {/* Grille des avantages */}
-                <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
-                  {advantages.map((advantage, index) => (
-                    <div 
-                      key={index} 
-                      className="group bg-white/40 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/30 hover:bg-white/60 hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <div className="flex items-start space-x-4">
-                        <div className={`bg-gradient-to-r ${advantage.color} w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg flex-shrink-0`}>
-                          <advantage.icon className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors duration-300">
-                            {advantage.title}
-                          </h4>
-                          <p className="text-slate-600 group-hover:text-slate-700 transition-colors duration-300">
-                            {advantage.description}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Call to action avec animation */}
-                <div className="text-center">
-                  <a 
-                    href="#contact" 
-                    className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-10 py-5 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl hover:scale-105 transform"
+            <div className="bg-slate-50 rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-12 border border-slate-100">
+              <div className="text-center mb-10">
+                <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-3">
+                  Pourquoi choisir{' '}
+                  <span className="bg-gradient-to-r from-primary-700 to-primary-500 bg-clip-text text-transparent">
+                    Gandal-Technologie
+                  </span>{' '}
+                  ?
+                </h3>
+                <p className="text-lg text-slate-600">Parce que nous sommes :</p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto mb-10">
+                {advantages.map((adv, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-4 bg-white rounded-xl p-5 border border-slate-100"
                   >
-                    <span>Démarrer votre projet</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </a>
-                </div>
+                    <div className="bg-primary-50 p-2.5 rounded-lg flex-shrink-0">
+                      <adv.icon className="w-5 h-5 text-primary-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-slate-800 mb-1">{adv.title}</h4>
+                      <p className="text-sm text-slate-600">{adv.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="text-center">
+                <a
+                  href="#contact"
+                  className="group inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-primary-600/25 transition-all duration-300"
+                >
+                  Démarrer votre projet
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Styles pour les animations personnalisées */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
-          @keyframes float {
-            0%, 100% {
-              transform: translateY(0px);
-            }
-            50% {
-              transform: translateY(-15px);
-            }
-          }
-          
-          @keyframes shimmer {
-            0% {
-              transform: translateX(-100%);
-            }
-            100% {
-              transform: translateX(100%);
-            }
-          }
-          
-          .animate-shimmer {
-            animation: shimmer 2s infinite;
-          }
-          
-          .group:hover .animate-shimmer {
-            animation-play-state: running;
-          }
-        `
-      }} />
     </section>
   );
 };

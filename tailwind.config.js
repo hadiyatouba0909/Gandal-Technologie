@@ -4,8 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'Roboto', 'sans-serif'],
-        body: ['Roboto', 'sans-serif'],
+        sans: ['Inter', 'sans-serif'],
         heading: ['Poppins', 'sans-serif'],
       },
       colors: {
@@ -21,12 +20,8 @@ export default {
           800: '#03035E',
         }
       },
-      animation: {
-        'fade-in': 'fadeIn 0.8s ease-in-out',
-        'slide-in': 'slideIn 0.6s ease-out',
-        'bounce-soft': 'bounce 2s infinite',
-      }
     },
   },
+  plugins: [],
   plugins: [],
 };
