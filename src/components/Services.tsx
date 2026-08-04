@@ -138,49 +138,6 @@ const Services = () => {
             ))}
           </div>
 
-          {/* VPS offers */}
-          <div className="mb-16 lg:mb-20">
-            <div className="bg-gradient-to-br from-primary-700 to-primary-900 rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-10 text-white shadow-xl">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl sm:text-3xl font-bold mb-3">GANDAL-TECHNOLOGIE</h3>
-                <p className="text-primary-100 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
-                  L’hébergement applicatif professionnel, sécurisé et performant.
-                </p>
-              </div>
-
-              <div className="grid lg:grid-cols-2 gap-6 items-start">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                  <h4 className="text-xl font-semibold mb-4">💻 Vos applications sur nos VPS</h4>
-                  <ul className="space-y-3 text-primary-50 text-sm sm:text-base">
-                    <li className="flex gap-2"><span>•</span><span>Performance optimisée pour vos applications</span></li>
-                    <li className="flex gap-2"><span>•</span><span>Infrastructure professionnelle, rapide et performante</span></li>
-                    <li className="flex gap-2"><span>•</span><span>Disponibilité et sécurité 24/7</span></li>
-                    <li className="flex gap-2"><span>•</span><span>Administration facilitée pour un déploiement rapide</span></li>
-                  </ul>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                  <h4 className="text-xl font-semibold mb-4">💳 Nos forfaits d’hébergement</h4>
-                  <div className="space-y-4 text-sm sm:text-base">
-                    <div className="rounded-xl bg-white/15 p-4">
-                      <p className="font-semibold">Formule mensuelle</p>
-                      <p className="text-primary-100">3 000 F CFA / mois</p>
-                    </div>
-                    <div className="rounded-xl bg-white/15 p-4 border border-primary-300/40">
-                      <p className="font-semibold">Formule semestrielle <span className="text-amber-300">(Recommandée)</span></p>
-                      <p className="text-primary-100">15 000 F CFA / 6 mois</p>
-                      <p className="text-amber-300 text-sm mt-1">Économisez l’équivalent d’un mois offert !</p>
-                    </div>
-                    <div className="rounded-xl bg-white/15 p-4">
-                      <p className="font-semibold">Formule annuelle</p>
-                      <p className="text-primary-100">25 000 F CFA / an</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Why choose us */}
           <div
             ref={why.ref}
