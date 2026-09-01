@@ -120,6 +120,17 @@ const projects: Project[] = [
     liveUrl: 'https://mimapeds.com',
     githubFrontend: 'https://github.com/hadiyatouba0909/projet-khadija',
   },
+  {
+    id: 10,
+    name: 'MIMAP Workspace',
+    type: 'Application Web',
+    description:
+      'Espace professionnel de santé sécurisé pour la gestion des patients, des médecins et de l\'administration du cabinet MIMAP.',
+    image: 'https://mimapeds.com/Image%20docteur.png',
+    icon: Monitor,
+    tech: ['React', 'Node.js', 'API REST'],
+    liveUrl: 'https://workspace.mimapeds.com/login',
+  },
 ];
 
 const filters = ['Tous', 'Site Vitrine', 'Site Web', 'Application Web', 'Application Mobile', 'Portfolio'];
