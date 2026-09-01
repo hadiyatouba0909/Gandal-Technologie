@@ -85,12 +85,12 @@ const projects: Project[] = [
   {
     id: 7,
     name: 'Fédération Shaolin Sénégal',
-    type: 'Application Web',
+    type: 'Site Vitrine',
     description:
       'Site officiel de la Fédération Shaolin Sénégal : présentation des clubs, actualités et gestion de contenu via une API dédiée.',
     image:
       'https://shaolin-senegal.com/images/delegation/delegation-banniere-temple.jpeg',
-    icon: Monitor,
+    icon: Globe,
     tech: ['React', 'Node.js', 'API REST'],
     liveUrl: 'https://shaolin-senegal.com',
     githubFrontend: 'https://github.com/IbrahimaISIDev/Federation-Shaolin-Senegal-Frontend',
