@@ -89,7 +89,7 @@ const projects: Project[] = [
     description:
       'Site officiel de la Fédération Shaolin Sénégal : présentation des clubs, actualités et gestion de contenu via une API dédiée.',
     image:
-      'https://images.pexels.com/photos/7045543/pexels-photo-7045543.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'https://shaolin-senegal.com/images/delegation/delegation-banniere-temple.jpeg',
     icon: Monitor,
     tech: ['React', 'Node.js', 'API REST'],
     liveUrl: 'https://shaolin-senegal.com',
