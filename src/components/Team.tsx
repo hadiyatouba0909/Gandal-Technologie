@@ -4,12 +4,7 @@ import { useInView } from '../hooks/useInView';
 const teamMembers = [
   {
     name: 'Hadiyatou BA',
-    role: 'Co-fondatrice & Lead Dev',
-    quote:
-      'Concevoir des expériences digitales intuitives, performantes et accessibles — au service d\'un numérique plus inclusif.',
-    specialization: 'Experte Full Stack — Frontend & Backend',
-    passion:
-      'Engagée pour l\'impact social de la tech et la représentation des femmes dans le numérique.',
+    role: 'Développeuse FullStack',
     image: '/WhatsApp Image 2025-03-03 at 08.51.12.jpeg',
     gradient: 'from-pink-500 to-purple-500',
     badge: 'Co-fondatrice',
@@ -21,12 +16,7 @@ const teamMembers = [
   },
   {
     name: 'Ibrahima Sory Diallo',
-    role: 'Co-fondateur & Lead Dev',
-    quote:
-      'Transformer des idées complexes en solutions techniques robustes, scalables et orientées utilisateur.',
-    specialization: 'Expert Full Stack — Backend & Frontend',
-    passion:
-      'Passionné par l\'innovation, l\'optimisation des systèmes et l\'écosystème open source.',
+    role: 'Développeur FullStack & Lead Dev',
     image: '/WhatsApp Image 2025-05-22 at 21.55.00.jpeg',
     gradient: 'from-primary-500 to-primary-400',
     badge: 'Co-fondateur',
@@ -103,22 +93,6 @@ const Team = () => {
                   <p className="text-sm text-slate-500 font-medium">{member.role}</p>
                 </div>
 
-                {/* Quote & details */}
-                <div className="bg-white rounded-xl p-5 mb-5 border border-slate-100">
-                  <p className="text-slate-600 italic mb-4 text-sm leading-relaxed">
-                    "{member.quote}"
-                  </p>
-                  <div className="space-y-1.5 text-sm">
-                    <p className="text-slate-600">
-                      <span className="font-semibold text-slate-700">🎯</span>{' '}
-                      {member.specialization}
-                    </p>
-                    <p className="text-slate-600">
-                      <span className="font-semibold text-slate-700">❤️</span>{' '}
-                      {member.passion}
-                    </p>
-                  </div>
-                </div>
                 {/* Social */}
                 <div className="flex justify-center gap-3">
                   <a
