@@ -1,8 +1,21 @@
 import { useState } from 'react';
-import { ExternalLink, Globe, Monitor, Smartphone } from 'lucide-react';
+import { ExternalLink, Github, Globe, Monitor, Smartphone, type LucideIcon } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
-const projects = [
+interface Project {
+  id: number;
+  name: string;
+  type: string;
+  description: string;
+  image: string;
+  icon: LucideIcon;
+  tech: string[];
+  liveUrl?: string;
+  githubFrontend?: string;
+  githubBackend?: string;
+}
+
+const projects: Project[] = [
   {
     id: 1,
     name: 'E-Commerce Platform',
@@ -68,6 +81,20 @@ const projects = [
       'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
     icon: Monitor,
     tech: ['Vue.js', 'D3.js', 'Express'],
+  },
+  {
+    id: 7,
+    name: 'Fédération Shaolin Sénégal',
+    type: 'Application Web',
+    description:
+      'Site officiel de la Fédération Shaolin Sénégal : présentation des clubs, actualités et gestion de contenu via une API dédiée.',
+    image:
+      'https://images.pexels.com/photos/7045543/pexels-photo-7045543.jpeg?auto=compress&cs=tinysrgb&w=800',
+    icon: Monitor,
+    tech: ['React', 'Node.js', 'API REST'],
+    liveUrl: 'https://shaolin-senegal.com',
+    githubFrontend: 'https://github.com/IbrahimaISIDev/Federation-Shaolin-Senegal-Frontend',
+    githubBackend: 'https://github.com/IbrahimaISIDev/Shaolin-Federation-Senegal-API-Backend',
   },
 ];
 
@@ -163,12 +190,24 @@ const Realisation = () => {
                         </span>
                       ))}
                     </div>
-                    <button
-                      className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors"
-                      aria-label={`Voir ${project.name}`}
-                    >
-                      <ExternalLink className="w-4 h-4 text-slate-700" />
-                    </button>
+                    {project.liveUrl ? (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors"
+                        aria-label={`Voir ${project.name}`}
+                      >
+                        <ExternalLink className="w-4 h-4 text-slate-700" />
+                      </a>
+                    ) : (
+                      <button
+                        className="bg-white/90 p-2 rounded-full hover:bg-white transition-colors"
+                        aria-label={`Voir ${project.name}`}
+                      >
+                        <ExternalLink className="w-4 h-4 text-slate-700" />
+                      </button>
+                    )}
                   </div>
                 </div>
 
@@ -187,9 +226,46 @@ const Realisation = () => {
                   >
                     {project.type}
                   </span>
-                  <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">
+                  <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 mb-3">
                     {project.description}
                   </p>
+                  {(project.liveUrl || project.githubFrontend || project.githubBackend) && (
+                    <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-100">
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-medium text-primary-600 hover:text-primary-700"
+                        >
+                          <Globe className="w-3.5 h-3.5" />
+                          Site en ligne
+                        </a>
+                      )}
+                      {project.githubFrontend && (
+                        <a
+                          href={project.githubFrontend}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-primary-600"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                          Frontend
+                        </a>
+                      )}
+                      {project.githubBackend && (
+                        <a
+                          href={project.githubBackend}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-medium text-slate-600 hover:text-primary-600"
+                        >
+                          <Github className="w-3.5 h-3.5" />
+                          Backend
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
