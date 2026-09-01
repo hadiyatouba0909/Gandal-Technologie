@@ -96,6 +96,18 @@ const projects: Project[] = [
     githubFrontend: 'https://github.com/IbrahimaISIDev/Federation-Shaolin-Senegal-Frontend',
     githubBackend: 'https://github.com/IbrahimaISIDev/Shaolin-Federation-Senegal-API-Backend',
   },
+  {
+    id: 8,
+    name: 'Abu Maryam TV',
+    type: 'Application Web',
+    description:
+      'Plateforme d\'enseignement islamique avec bibliothèque de cours, diffusion en direct des conférences et gestion des événements.',
+    image: 'https://abou-maryam.com/images/oustaz-niang-mbaye1.jpeg',
+    icon: Monitor,
+    tech: ['React', 'Node.js', 'API REST'],
+    liveUrl: 'https://abou-maryam.com',
+    githubFrontend: 'https://github.com/IbrahimaISIDev/abu-maryam-project',
+  },
 ];
 
 const filters = ['Tous', 'Site Vitrine', 'Application Web', 'Application Mobile', 'Portfolio'];
