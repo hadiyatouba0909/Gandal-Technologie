@@ -99,11 +99,11 @@ const projects: Project[] = [
   {
     id: 8,
     name: 'Abu Maryam TV',
-    type: 'Application Web',
+    type: 'Site Vitrine',
     description:
       'Plateforme d\'enseignement islamique avec bibliothèque de cours, diffusion en direct des conférences et gestion des événements.',
     image: 'https://abou-maryam.com/images/oustaz-niang-mbaye1.jpeg',
-    icon: Monitor,
+    icon: Globe,
     tech: ['React', 'Node.js', 'API REST'],
     liveUrl: 'https://abou-maryam.com/fr',
     githubFrontend: 'https://github.com/IbrahimaISIDev/abu-maryam-project',
