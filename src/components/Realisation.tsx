@@ -105,7 +105,7 @@ const projects: Project[] = [
     image: 'https://abou-maryam.com/images/oustaz-niang-mbaye1.jpeg',
     icon: Monitor,
     tech: ['React', 'Node.js', 'API REST'],
-    liveUrl: 'https://abou-maryam.com',
+    liveUrl: 'https://abou-maryam.com/fr',
     githubFrontend: 'https://github.com/IbrahimaISIDev/abu-maryam-project',
   },
 ];
