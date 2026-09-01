@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Github, Globe, Monitor, Smartphone, type LucideIcon } from 'lucide-react';
+import { ExternalLink, Github, Globe, Monitor, type LucideIcon } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
 
 interface Project {
@@ -17,75 +17,9 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: 1,
-    name: 'E-Commerce Platform',
-    type: 'Application Web',
-    description:
-      'Plateforme e-commerce complète avec gestion des stocks, paiements en ligne et tableau de bord administrateur.',
-    image:
-      'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=800',
-    icon: Monitor,
-    tech: ['React', 'Node.js', 'MongoDB'],
-  },
-  {
-    id: 2,
-    name: 'Restaurant Mobile App',
-    type: 'Application Mobile',
-    description:
-      'Application mobile pour commande de repas avec géolocalisation, paiement intégré et suivi de livraison.',
-    image:
-      'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
-    icon: Smartphone,
-    tech: ['React Native', 'Firebase', 'Stripe'],
-  },
-  {
-    id: 3,
-    name: 'Portfolio Architecte',
-    type: 'Site Vitrine',
-    description:
-      "Site vitrine élégant pour un cabinet d'architecture avec galerie interactive et formulaire de contact.",
-    image:
-      'https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800',
-    icon: Globe,
-    tech: ['Next.js', 'Tailwind', 'Framer Motion'],
-  },
-  {
-    id: 4,
-    name: 'Portfolio Créatif Designer',
-    type: 'Portfolio',
-    description:
-      'Portfolio interactif pour un designer graphique avec galerie de projets, animations fluides et expérience immersive.',
-    image:
-      'https://images.pexels.com/photos/3184317/pexels-photo-3184317.jpeg?auto=compress&cs=tinysrgb&w=800',
-    icon: Globe,
-    tech: ['React', 'Three.js', 'GSAP'],
-  },
-  {
-    id: 5,
-    name: 'Portfolio Photographe',
-    type: 'Portfolio',
-    description:
-      'Site portfolio pour photographe professionnel avec galerie haute définition, système de booking et blog intégré.',
-    image:
-      'https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&w=800',
-    icon: Globe,
-    tech: ['Vue.js', 'Nuxt.js', 'Strapi'],
-  },
-  {
-    id: 6,
-    name: 'Dashboard Analytics',
-    type: 'Application Web',
-    description:
-      'Tableau de bord analytique en temps réel avec visualisations de données et rapports personnalisés.',
-    image:
-      'https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=800',
-    icon: Monitor,
-    tech: ['Vue.js', 'D3.js', 'Express'],
-  },
-  {
     id: 7,
     name: 'Fédération Shaolin Sénégal',
-    type: 'Site web',
+    type: 'Site Web',
     description:
       'Site officiel de la Fédération Shaolin Sénégal : présentation des clubs, actualités et gestion de contenu via une API dédiée.',
     image:
@@ -133,14 +67,12 @@ const projects: Project[] = [
   },
 ];
 
-const filters = ['Tous', 'Site Vitrine', 'Site Web', 'Application Web', 'Application Mobile', 'Portfolio'];
+const filters = ['Tous', 'Site Vitrine', 'Site Web', 'Application Web'];
 
 const badgeColors: Record<string, string> = {
   'Site Vitrine': 'bg-green-50 text-green-700',
   'Site Web': 'bg-teal-50 text-teal-700',
   'Application Web': 'bg-primary-50 text-primary-700',
-  'Application Mobile': 'bg-purple-50 text-purple-700',
-  Portfolio: 'bg-orange-50 text-orange-700',
 };
 
 const Realisation = () => {
