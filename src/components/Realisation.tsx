@@ -67,10 +67,10 @@ const projects: Project[] = [
   },
 ];
 
-const filters = ['Tous', 'Site Vitrine', 'Site Web', 'Application Web'];
+const filters = ['Tous', 'Application Mobile', 'Site Web', 'Application Web'];
 
 const badgeColors: Record<string, string> = {
-  'Site Vitrine': 'bg-green-50 text-green-700',
+  'Application Mobile': 'bg-purple-50 text-purple-700',
   'Site Web': 'bg-teal-50 text-teal-700',
   'Application Web': 'bg-primary-50 text-primary-700',
 };
