@@ -85,7 +85,7 @@ const projects: Project[] = [
   {
     id: 7,
     name: 'Fédération Shaolin Sénégal',
-    type: 'Site Vitrine',
+    type: 'Site web',
     description:
       'Site officiel de la Fédération Shaolin Sénégal : présentation des clubs, actualités et gestion de contenu via une API dédiée.',
     image:
@@ -99,7 +99,7 @@ const projects: Project[] = [
   {
     id: 8,
     name: 'Abu Maryam TV',
-    type: 'Site Vitrine',
+    type: 'Site Web',
     description:
       'Plateforme d\'enseignement islamique avec bibliothèque de cours, diffusion en direct des conférences et gestion des événements.',
     image: 'https://abou-maryam.com/images/oustaz-niang-mbaye1.jpeg',
@@ -108,12 +108,25 @@ const projects: Project[] = [
     liveUrl: 'https://abou-maryam.com/fr',
     githubFrontend: 'https://github.com/IbrahimaISIDev/abu-maryam-project',
   },
+  {
+    id: 9,
+    name: 'MIMAP',
+    type: 'Site Web',
+    description:
+      "Site web d'un cabinet médical mauritanien : présentation des services, de l'équipe médicale et prise de contact.",
+    image: 'https://mimapeds.com/Image%20docteur.png',
+    icon: Globe,
+    tech: ['React', 'Node.js', 'API REST'],
+    liveUrl: 'https://mimapeds.com',
+    githubFrontend: 'https://github.com/hadiyatouba0909/projet-khadija',
+  },
 ];
 
-const filters = ['Tous', 'Site Vitrine', 'Application Web', 'Application Mobile', 'Portfolio'];
+const filters = ['Tous', 'Site Vitrine', 'Site Web', 'Application Web', 'Application Mobile', 'Portfolio'];
 
 const badgeColors: Record<string, string> = {
   'Site Vitrine': 'bg-green-50 text-green-700',
+  'Site Web': 'bg-teal-50 text-teal-700',
   'Application Web': 'bg-primary-50 text-primary-700',
   'Application Mobile': 'bg-purple-50 text-purple-700',
   Portfolio: 'bg-orange-50 text-orange-700',
