@@ -65,6 +65,18 @@ const projects: Project[] = [
     tech: ['React', 'Node.js', 'API REST'],
     liveUrl: 'https://workspace.mimapeds.com/login',
   },
+  {
+    id: 11,
+    name: 'BizSimplifi',
+    type: 'Application Web',
+    description:
+      'Application de gestion d\'entreprise permettant de simplifier le suivi administratif et financier des activités.',
+    image: 'https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800',
+    icon: Monitor,
+    tech: ['React', 'Node.js', 'API REST'],
+    liveUrl: 'https://biz-simplifi-frontend.onrender.com',
+    githubFrontend: 'https://github.com/hadiyatouba0909/biz-simplifi',
+  },
 ];
 
 const filters = ['Tous', 'Application Web', 'Site Web', 'Application Mobile'];
