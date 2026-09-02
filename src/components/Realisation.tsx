@@ -77,6 +77,30 @@ const projects: Project[] = [
     liveUrl: 'https://biz-simplifi-frontend.onrender.com',
     githubFrontend: 'https://github.com/hadiyatouba0909/biz-simplifi',
   },
+  {
+    id: 12,
+    name: 'Maraba Fashion',
+    type: 'Site Web',
+    description:
+      'Boutique en ligne de mode avec catalogue de produits, panier d\'achat et paiement sécurisé via Orange Money et Wave.',
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800',
+    icon: Globe,
+    tech: ['React', 'Node.js', 'API REST'],
+    liveUrl: 'https://maraba-fashion.vercel.app/',
+    githubFrontend: 'https://github.com/hadiyatouba0909/maraba_fashion',
+  },
+  {
+    id: 13,
+    name: 'Maraba Fashion Admin',
+    type: 'Application Web',
+    description:
+      'Espace d\'administration pour la gestion des produits, des commandes et du catalogue de la boutique Maraba Fashion.',
+    image: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800',
+    icon: Monitor,
+    tech: ['React', 'Node.js', 'API REST'],
+    liveUrl: 'https://maraba-fashion-admin.vercel.app/login',
+    githubFrontend: 'https://github.com/hadiyatouba0909/maraba_fashion',
+  },
 ];
 
 const filters = ['Tous', 'Application Web', 'Site Web', 'Application Mobile'];
