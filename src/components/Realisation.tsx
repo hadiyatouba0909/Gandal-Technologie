@@ -60,7 +60,7 @@ const projects: Project[] = [
     type: 'Application Web',
     description:
       'Espace professionnel de santé sécurisé pour la gestion des patients, des médecins et de l\'administration du cabinet MIMAP.',
-    image: 'https://mimapeds.com/Image%20docteur.png',
+    image: '/image%20copy.png',
     icon: Monitor,
     tech: ['React', 'Node.js', 'API REST'],
     liveUrl: 'https://workspace.mimapeds.com/login',
