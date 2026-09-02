@@ -95,7 +95,7 @@ const projects: Project[] = [
     type: 'Application Web',
     description:
       'Espace d\'administration pour la gestion des produits, des commandes et du catalogue de la boutique Maraba Fashion.',
-    image: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: '/image.png',
     icon: Monitor,
     tech: ['React', 'Node.js', 'API REST'],
     liveUrl: 'https://maraba-fashion-admin.vercel.app/login',
