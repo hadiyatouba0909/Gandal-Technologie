@@ -95,7 +95,7 @@ const Header = () => {
             <img
               src="/Gandal-Technologie%20Logo%20Modulaire(1).svg"
               alt="Gandal-Technologie"
-              className="h-22 sm:h-24 w-auto object-contain"
+              className="h-20 sm:h-22 w-auto object-contain"
             />
           </a>
 
