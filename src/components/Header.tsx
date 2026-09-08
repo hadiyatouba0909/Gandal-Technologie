@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Code2, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
+import { Menu, X, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -85,14 +85,18 @@ const Header = () => {
       {/* Main nav */}
       <nav className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <a href="#home" className="flex items-center gap-3 group">
-            <div className="bg-gradient-to-br from-primary-600 to-primary-800 p-2.5 rounded-xl shadow-md group-hover:shadow-lg transition-shadow">
-              <Code2 className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-            </div>
-            <div>
-              <h1 className="text-lg sm:text-xl font-bold text-slate-800">Gandal-Technologie</h1>
-              <p className="text-xs text-slate-500 hidden sm:block">L'innovation au service de vos idées</p>
-            </div>
+          <a
+            href="/Gandal-Technologie%20Logo%20Modulaire(1).svg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 group"
+            aria-label="Afficher le logo Gandal-Technologie"
+          >
+            <img
+              src="/Gandal-Technologie%20Logo%20Modulaire(1).svg"
+              alt="Gandal-Technologie"
+              className="h-22 sm:h-24 w-auto object-contain"
+            />
           </a>
 
           {/* Desktop nav */}

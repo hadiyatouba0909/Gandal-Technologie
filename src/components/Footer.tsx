@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import {
-  Code2,
   Mail,
   MapPin,
   Github,
@@ -53,15 +52,18 @@ const Footer = () => {
           {/* Brand */}
           <div className="sm:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-gradient-to-br from-primary-500 to-primary-700 p-2.5 rounded-xl">
-                <Code2 className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Gandal-Technologie</h3>
-                <p className="text-sm text-slate-400">
-                  L'innovation au service de vos idées
-                </p>
-              </div>
+              <a
+                href="/Gandal-Technologie%20Logo%20Modulaire(1).svg"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Afficher le logo Gandal-Technologie"
+              >
+                <img
+                  src="/Gandal-Technologie%20Logo%20Modulaire(1).svg"
+                  alt="Gandal-Technologie"
+                  className="h-32 w-auto object-contain"
+                />
+              </a>
             </div>
             <p className="text-slate-400 mb-6 leading-relaxed max-w-md">
               Spécialisés dans le développement web et mobile full stack, nous
