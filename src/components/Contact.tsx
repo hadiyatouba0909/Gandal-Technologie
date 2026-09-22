@@ -24,8 +24,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email',
-    content: 'gandal-technologie@gmail.com',
-    link: 'mailto:gandal-technologie@gmail.com',
+    content: 'gandaltechnologie09@gmail.com',
+    link: 'mailto:gandaltechnologie09@gmail.com',
     gradient: 'from-primary-500 to-primary-400',
   },
   {
@@ -311,7 +311,7 @@ const Contact = () => {
                   <Phone className="w-4 h-4" /> Appeler maintenant
                 </a>
                 <a
-                  href="mailto:gandal-technologie@gmail.com"
+                  href="mailto:gandaltechnologie09@gmail.com"
                   className="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-full text-sm font-semibold transition-colors"
                 >
                   <Mail className="w-4 h-4" /> Envoyer un email

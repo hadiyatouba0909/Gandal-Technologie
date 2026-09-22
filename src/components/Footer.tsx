@@ -61,7 +61,7 @@ const Footer = () => {
                 <img
                   src="/Gandal-Technologie%20Logo%20Modulaire(1).svg"
                   alt="Gandal-Technologie"
-                  className="h-32 w-auto object-contain"
+                  className="h-20 w-auto object-contain"
                 />
               </a>
             </div>
@@ -71,11 +71,11 @@ const Footer = () => {
             </p>
             <div className="space-y-3">
               <a
-                href="mailto:gandal-technologie@gmail.com"
+                href="mailto:gandaltechnologie09@gmail.com"
                 className="flex items-center gap-3 text-slate-400 hover:text-primary-300 transition-colors text-sm"
               >
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                gandal-technologie@gmail.com
+                gandaltechnologie09@gmail.com
               </a>
               <div className="flex items-center gap-3 text-slate-400 text-sm">
                 <MapPin className="w-4 h-4 flex-shrink-0" />

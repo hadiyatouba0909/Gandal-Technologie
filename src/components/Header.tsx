@@ -59,11 +59,11 @@ const Header = () => {
               <span className="hidden sm:inline">+221 78 016 04 74</span>
             </a>
             <a
-              href="mailto:gandal-technologie@gmail.com"
+              href="mailto:gandaltechnologie09@gmail.com"
               className="flex items-center gap-1.5 hover:text-primary-200 transition-colors"
             >
               <Mail className="w-3.5 h-3.5" />
-              <span className="hidden md:inline">gandal-technologie@gmail.com</span>
+              <span className="hidden md:inline">gandaltechnologie09@gmail.com</span>
             </a>
             <div className="hidden lg:flex items-center gap-1.5 text-primary-200">
               <Clock className="w-3.5 h-3.5" />
@@ -95,7 +95,7 @@ const Header = () => {
             <img
               src="/Gandal-Technologie%20Logo%20Modulaire(1).svg"
               alt="Gandal-Technologie"
-              className="h-20 sm:h-20 w-auto object-contain"
+              className="h-16 sm:h-22 w-auto object-contain"
             />
           </a>
 
