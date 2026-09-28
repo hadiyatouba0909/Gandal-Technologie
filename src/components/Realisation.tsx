@@ -10,6 +10,7 @@ interface Project {
   image: string;
   icon: LucideIcon;
   tech: string[];
+  showTech?: boolean;
   liveUrl?: string;
   githubFrontend?: string;
   githubBackend?: string;
@@ -100,6 +101,18 @@ const projects: Project[] = [
     tech: ['React', 'Node.js', 'API REST'],
     liveUrl: 'https://maraba-fashion-admin.vercel.app/login',
     githubFrontend: 'https://github.com/hadiyatouba0909/maraba_fashion',
+  },
+  {
+    id: 14,
+    name: 'Site Web Gandal-Technologie',
+    type: 'Site Web',
+    description:
+      'Site vitrine responsive présentant Gandal-Technologie, ses services, ses réalisations et ses moyens de contact.',
+    image: '/Gandal-Technologie%20Logo%20Modulaire(1).svg',
+    icon: Globe,
+    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Lucide React'],
+    showTech: true,
+    githubFrontend: 'https://github.com/hadiyatouba0909/Gandal-Technologie',
   },
 ];
 
@@ -223,6 +236,21 @@ const Realisation = () => {
                   <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 mb-3">
                     {project.description}
                   </p>
+                  {project.showTech && (
+                    <div className="mb-3">
+                      <p className="text-xs font-semibold text-slate-700 mb-1.5">Technologies</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.tech.map((technology) => (
+                          <span
+                            key={technology}
+                            className="rounded bg-slate-100 px-2 py-1 text-xs text-slate-600"
+                          >
+                            {technology}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                   {(project.liveUrl || project.githubFrontend || project.githubBackend) && (
                     <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-slate-100">
                       {project.liveUrl && (
